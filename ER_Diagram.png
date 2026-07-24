@@ -1,1 +1,61 @@
+                 +------------------+
+                 |    Branches      |
+                 +------------------+
+                 | branch_id (PK)   |
+                 | branch_name      |
+                 | city             |
+                 | state            |
+                 | manager_name     |
+                 +------------------+
+                        ▲
+                        │
+          ┌─────────────┴─────────────┐
+          │                           │
+          │                           │
++------------------+          +------------------+
+|    Accounts      |          |    Employees     |
++------------------+          +------------------+
+| account_id (PK)  |          | employee_id (PK) |
+| customer_id (FK) |          | branch_id (FK)   |
+| branch_id (FK)   |          | employee_name    |
+| account_number   |          | designation      |
+| account_type     |          | salary           |
+| balance          |          | phone            |
+| status           |          | email            |
++------------------+          +------------------+
+        ▲
+        │
+        │
++------------------+
+|    Customers     |
++------------------+
+| customer_id (PK) |
+| first_name       |
+| last_name        |
+| gender           |
+| phone            |
+| email            |
+| city             |
+| state            |
++------------------+
+        │
+        ├───────────────┐
+        │               │
+        ▼               ▼
++------------------+   +----------------------+
+|      Loans       |   |    Transactions      |
++------------------+   +----------------------+
+| loan_id (PK)     |   | transaction_id (PK)  |
+| customer_id (FK) |   | account_id (FK)      |
+| loan_type        |   | transaction_type     |
+| loan_amount      |   | amount               |
+| interest_rate    |   | transaction_date     |
+| loan_status      |   +----------------------+
++------------------+
 
+
+Customers → Accounts = One customer can have many accounts.
+Branches → Accounts = One branch can have many accounts.
+Accounts → Transactions = One account can have many transactions.
+Customers → Loans = One customer can have many loans.
+Branches → Employees = One branch can have many employees.
