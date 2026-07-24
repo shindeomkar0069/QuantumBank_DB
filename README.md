@@ -19,7 +19,8 @@ QuantumBank DB is a Banking Management System developed using MySQL. This projec
 ## 🛠️ Technologies Used
 
 - MySQL
-- MySQL Workbench
+- XAMPP
+- MySQL Command Line Client (CMD)
 - SQL
 
 ---
@@ -72,11 +73,29 @@ QuantumBank_DB/
 
 ## 🚀 How to Run
 
-1. Open MySQL Workbench.
-2. Create or open a MySQL connection.
-3. Open the `QuantumBankDB.sql` file.
-4. Execute the SQL script.
-5. The database, tables, sample data, and queries will be created automatically.
+1. Start the **MySQL** service from the XAMPP Control Panel.
+2. Open the XAMPP installation folder.
+3. Navigate to:
+
+   ```
+   C:\xampp\mysql\bin
+   ```
+
+4. Open Command Prompt in this folder.
+5. Log in to MySQL:
+
+   ```bash
+   mysql -u root -p
+   ```
+
+6. Enter your MySQL password (or press Enter if no password is set).
+7. Execute the SQL script:
+
+   ```sql
+   SOURCE QuantumBankDB.sql;
+   ```
+
+8. The `BankingDB` database, tables, sample data, and SQL queries will be created successfully.
 
 ---
 
